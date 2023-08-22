@@ -78,31 +78,18 @@ theorem BTree.add_left_neg_counterexample :
 
 Recall the following definitions from the lecture: -/
 
-#check Multiset.elems
 #check Finset.elems
 #check List.elems
 
-/- 2.1. Prove that the multiset of nodes does not change when mirroring a tree.
-
-Hints:
-
-* Perform structural induction on `t`.
-
-* The `ac_rfl` tactic also works with set operations. -/
-
-theorem Multiset.elems_mirror (t : BTree ℕ) :
-  Multiset.elems (mirror t) = Multiset.elems t :=
-  sorry
-
-/- 2.2. Prove that the finite set of nodes does not change when mirroring a
+/- 2.1. Prove that the finite set of nodes does not change when mirroring a
 tree. -/
 
 theorem Finset.elems_mirror (t : BTree ℕ) :
   Finset.elems (mirror t) = Finset.elems t :=
   sorry
 
-/- 2.3. Show that this does not hold for the list of nodes by providing a
-tree `t` for which `nodes_list t ≠ nodes_list (mirror t)`.
+/- 2.2. Show that this does not hold for the list of nodes by providing a
+tree `t` for which `List.elems t ≠ List.elems (mirror t)`.
 
 If you define a suitable counterexample, the proof below will succeed. -/
 

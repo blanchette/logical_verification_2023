@@ -155,7 +155,7 @@ def Int2.mul : Int2 → Int2 → Int2
   | Int2.one,  a => a
   | Int2.zero, _ => Int2.zero
 
-/- TODO: seems to diverge
+/-
 instance Int2.Field : Field Int2 :=
   { Int2.AddGroup with
     one            := Int2.one
@@ -391,11 +391,9 @@ def Finset.elems : BTree ℕ → Finset ℕ
 
 #eval List.sum [2, 3, 4]
 #eval Multiset.sum ({2, 3, 4} : Multiset ℕ)
--- TODO: #eval Finset.sum ({2, 3, 4} : Finset ℕ) (fun n ↦ n)
 
 #eval List.prod [2, 3, 4]
 #eval Multiset.prod ({2, 3, 4} : Multiset ℕ)
--- TODO: #eval Finset.prod ({2, 3, 4} : Finset ℕ) (fun n ↦ n)
 
 
 /- ## Order Type Classes

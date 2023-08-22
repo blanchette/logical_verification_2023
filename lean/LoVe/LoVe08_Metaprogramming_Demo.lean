@@ -483,17 +483,17 @@ elab "prove_direct" : tactic =>
 
 /- Let us check that our tactic works: -/
 
-theorem Nat.Eq_symm (x y : ℕ) (h : x = y) :
+theorem Nat.symm (x y : ℕ) (h : x = y) :
   y = x :=
   by prove_direct
 
-theorem Nat.Eq_symm_manual (x y : ℕ) (h : x = y) :
+theorem Nat.symm_manual (x y : ℕ) (h : x = y) :
   y = x :=
   by
     apply symm
     hypothesis
 
-theorem Nat.Eq_trans (x y z : ℕ) (hxy : x = y) (hyz : y = z) :
+theorem Nat.trans (x y z : ℕ) (hxy : x = y) (hyz : y = z) :
   x = z :=
   by prove_direct
 
@@ -501,10 +501,10 @@ theorem List.reverse_twice (xs : List ℕ) :
   List.reverse (List.reverse xs) = xs :=
   by prove_direct
 
-/- Lean has `library_search`: -/
+/- Lean has `apply?`: -/
 
-theorem List.reverse_twice_library_search (xs : List ℕ) :
+theorem List.reverse_twice_apply? (xs : List ℕ) :
   List.reverse (List.reverse xs) = xs :=
-  by library_search
+  by apply?
 
 end LoVe

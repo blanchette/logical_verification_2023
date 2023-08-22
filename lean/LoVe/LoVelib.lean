@@ -143,19 +143,7 @@ attribute [simp] Int.mul_eq_zero
 
 @[simp] theorem Rat.div_two_add_div_two (x : ℚ) :
   x / 2 + x / 2 = x :=
-  by
-    have hxx : x + x = 2 * x :=
-      by linarith
-    have hxx2 : (x + x) / 2 = (2 * x) / 2 :=
-      by rw [hxx]
-    have hx2x2 : x / 2 + x / 2 = (2 * x) / 2 :=
-      by
-        rw [←hxx2]
-        rw [add_div]
-    rw [hx2x2]
-    ring_nf
-    apply mul_div_cancel
-    decide
+  by ring_nf
 
 
 /- ## Lists -/
