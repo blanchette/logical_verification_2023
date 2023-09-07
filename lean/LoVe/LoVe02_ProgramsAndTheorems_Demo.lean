@@ -161,7 +161,7 @@ def appendImplicit {α : Type} : List α → List α → List α
 
 #eval appendImplicit [3, 1] [4, 1, 5]
 
-/- Prefixing a definition name with `@` gives the corresponding defintion in
+/- Prefixing a definition name with `@` gives the corresponding definition in
 which all implicit arguments have been made explicit. This is useful in
 situations where Lean cannot work out how to instantiate the implicit
 argument. -/
