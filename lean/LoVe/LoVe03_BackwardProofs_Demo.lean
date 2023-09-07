@@ -40,7 +40,7 @@ theorem fst_of_two_props :
 /- Note that `a → b → a` is parsed as `a → (b → a)`.
 
 Propositions in Lean are terms of type `Prop`. `Prop` is a type, just like `Nat`
-and `List Bool`. In fact there is a close correspondence between propositons and
+and `List Bool`. In fact there is a close correspondence between propositions and
 types, which will be explained in lecture 4.
 
 

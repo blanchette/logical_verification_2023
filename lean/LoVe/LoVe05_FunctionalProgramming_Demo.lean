@@ -154,7 +154,7 @@ structure RGB where
 
 namespace RGB_as_inductive
 
-/- The RGB structure defintion is equivalent to the following set of
+/- The RGB structure definition is equivalent to the following set of
 definitions: -/
 
 inductive RGB : Type where
