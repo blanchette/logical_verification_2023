@@ -152,29 +152,16 @@ attribute [simp] Int.mul_eq_zero
   List.count x [] = 0 :=
   by rfl
 
-theorem List.countp.go_accum {α : Type} (p : α → Bool) (as : List α) (acc : ℕ) :
-  List.countp.go p as acc = List.countp p as + acc :=
-  by
-    induction as generalizing acc with
-    | nil           => simp [List.countp.go, List.countp]
-    | cons a as' ih =>
-      simp [List.countp, List.countp.go]
-      cases Classical.em (p a) with
-      | inl hp =>
-        simp [hp, ih]
-        ac_rfl
-      | inr hp => simp [hp, ih]
-
 @[simp] theorem List.count_cons {α : Type} [BEq α] (x a : α) (as : List α) :
   List.count x (a :: as) = (bif a == x then 1 else 0) + List.count x as :=
   by
     cases Classical.em (a == x) with
     | inl hx =>
-      rw [List.count, List.countp, List.countp.go, List.countp.go_accum]
+      rw [List.count]
       simp [hx]
       ac_rfl
     | inr hx =>
-      rw [List.count, List.countp, List.countp.go, List.countp]
+      rw [List.count]
       simp [hx]
 
 @[simp] theorem List.count_append {α : Type} [BEq α] (x : α) (as bs : List α) :
